@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import heroImg from "@/assets/hero-hands.jpg";
 import encounterImg from "@/assets/encounter.jpg";
 import fasciculeImg from "@/assets/fascicule.jpg";
@@ -25,13 +26,9 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        <Manifesto />
-        <Objectives />
         <Method />
-        <Features />
         <Deliverable />
         <Pricing />
-        <ProTeaser />
         <Transgenerational />
         <FAQ />
         <CTA />
@@ -40,7 +37,6 @@ function Home() {
     </div>
   );
 }
-
 
 function Hero() {
   return (
@@ -94,7 +90,6 @@ function Hero() {
               Découvrir la démarche
             </a>
           </div>
-
         </div>
         <div className="md:col-span-5">
           <figure className="relative">
@@ -115,175 +110,40 @@ function Hero() {
   );
 }
 
-function Manifesto() {
-  return (
-    <section id="demarche" className="border-y border-border/60 bg-cream">
-      <div className="mx-auto max-w-4xl px-6 py-20 md:py-24">
-        <p className="mb-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          <span className="rule mr-3" />
-          Notre mission
-        </p>
-        <p className="font-serif text-3xl leading-[1.3] md:text-4xl">
-          Collecter, organiser et archiver les histoires familiales{" "}
-          <span className="text-ember">pour les transmettre</span> aux nouvelles générations.
-        </p>
-        <p className="mt-10 max-w-2xl italic text-muted-foreground leading-relaxed">
-          « L'essentiel de notre histoire nous est inconnu, et le restera à
-          tout jamais. Sauvegardons la mémoire avant qu'il ne soit trop tard. »
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function Objectives() {
-  const items = [
-    {
-      n: "Sauvegarder",
-      title: "Les mémoires individuelles",
-      text: "Recueillir les biographies des personnalités qui ont marqué nos vies — un parent, un grand-parent, un proche — ou raconter sa propre histoire.",
-    },
-    {
-      n: "Valoriser",
-      title: "Les archives familiales",
-      text: "Photos, lettres, vidéos, documents : autant de fragments qui retrouvent leur sens lorsqu'ils sont rassemblés autour d'un récit.",
-    },
-    {
-      n: "Honorer",
-      title: "Les récits qui nous inspirent",
-      text: "Faire de l'arbre généalogique un lieu vivant, où chaque nom porte une voix, des anecdotes, un visage.",
-    },
-  ];
-  return (
-    <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-      <div className="mb-16 max-w-3xl">
-        <p className="mb-4 text-xs uppercase tracking-[0.25em] text-ember">
-          <span className="rule mr-3" />
-          Nos objectifs
-        </p>
-        <h2 className="font-serif text-4xl leading-tight md:text-5xl">
-          Un patrimoine mémoriel familial,<br />
-          <em className="text-ember">privé et durable.</em>
-        </h2>
-      </div>
-      <div className="grid gap-10 md:grid-cols-3">
-        {items.map((it) => (
-          <div key={it.n} className="border-t border-ink/20 pt-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-ember">{it.n}</p>
-            <h3 className="mt-3 font-serif text-2xl">{it.title}</h3>
-            <p className="mt-3 leading-relaxed text-muted-foreground">{it.text}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Features() {
-  const features = [
-    { title: "Rédaction des biographies", text: "Synthèse des grands moments de vie, mise en forme avec soin." },
-    { title: "Enregistrement", text: "Transmission orale des récits, conservée telle qu'elle a été dite." },
-    { title: "Archivage", text: "Photos, vidéos, lettres, témoignages, archives personnelles." },
-    { title: "Arbres généalogiques simplifiés", text: "Une vue d'ensemble qui relie les récits entre eux." },
-    { title: "Gestion collaborative", text: "Chaque famille contribue, enrichit, complète à plusieurs voix." },
-    { title: "Droits par famille", text: "Propriétaire, contributeur, lecteur invité — chacun à sa place." },
-    { title: "Statut public ou privé", text: "Vous décidez de ce qui se partage, et de ce qui reste intime." },
-    { title: "Tirage papier", text: "Les biographies peuvent être imprimées et transmises en mains propres." },
-  ];
-  return (
-    <section id="fonctionnalites" className="border-y border-border/60 bg-cream">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <div className="mb-16 max-w-3xl">
-          <p className="mb-4 text-xs uppercase tracking-[0.25em] text-ember">
-            <span className="rule mr-3" />
-            La plateforme
-          </p>
-          <h2 className="font-serif text-4xl leading-tight md:text-5xl">
-            Un espace numérique<br />
-            <em className="text-ember">pour faire vivre les mémoires.</em>
-          </h2>
-          <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed">
-            Au-delà du fascicule, Ondarea propose un espace en ligne dédié à
-            votre famille, conçu pour rassembler, conserver et transmettre.
-          </p>
-        </div>
-        <ul className="grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((f) => (
-            <li key={f.title} className="border-t border-ink/15 pt-4">
-              <h3 className="font-serif text-lg text-ink">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
-function ProTeaser() {
-  return (
-    <section className="mx-auto max-w-5xl px-6 py-20 md:py-24">
-      <div className="grid gap-10 border border-ink/15 bg-paper p-10 md:grid-cols-[2fr_1fr] md:items-center md:p-14">
-        <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.25em] text-ember">
-            <span className="rule mr-3" />
-            Pour les établissements
-          </p>
-          <h2 className="font-serif text-3xl leading-tight md:text-4xl">
-            Une offre dédiée aux maisons de retraite et aux EHPAD.
-          </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed">
-            Ateliers mémoriels conduits auprès des résidents, livrets remis
-            aux familles : trois formules pour s'adapter à chaque
-            établissement.
-          </p>
-        </div>
-        <Link
-          to="/offre-pro"
-          className="inline-block rounded-sm border border-ink px-6 py-3 text-center text-sm font-medium transition-colors hover:bg-ink hover:text-paper md:justify-self-end"
-        >
-          Découvrir l'offre Pro →
-        </Link>
-      </div>
-    </section>
-  );
-}
-
 function Method() {
   const steps = [
     {
       n: "01",
       title: "Une rencontre est confiée",
-      text: "Vous nous présentez l'ancien dont vous souhaitez recueillir la mémoire, et le proche dont il portera le récit — un personnage à faire revivre.",
+      text: "Vous nous présentez l'aîné dont vous souhaitez recueillir la mémoire, et le proche dont il portera le récit — un personnage à faire revivre.",
     },
     {
       n: "02",
-      title: "Un accompagnant est désigné",
-      text: "Nous adressons à l'aîné un accompagnant. Trois heures ensemble, pour écouter, questionner, prendre des notes — et tisser un lien entre les générations.",
+      title: "Un transmetteur est désigné",
+      text: "Nous adressons à l'aîné un transmetteur de notre réseau — le plus souvent un jeune étudiant de la même région. Un temps d'échange approfondi, pour écouter, questionner, tisser un lien entre les générations. La rencontre a lieu chez l'aîné, là où il se sent le plus à l'aise pour se souvenir.",
     },
     {
       n: "03",
       title: "La restitution est composée",
-      text: "Le même accompagnant se charge de la restitution : un fascicule illustré, une version papier, un PDF, et une page web familiale dédiée au personnage raconté.",
+      text: "Le même transmetteur se charge de la restitution : un fascicule illustré, une version papier, un PDF, et une page web familiale dédiée au personnage raconté. L'ensemble est remis dans les quatre semaines suivant la rencontre.",
     },
   ];
 
   return (
-    <section id="methode" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+    <section id="demarche" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       <div className="grid gap-16 md:grid-cols-12">
         <div className="md:col-span-4">
           <p className="mb-4 text-xs uppercase tracking-[0.25em] text-ember">
             <span className="rule mr-3" />
-            La méthode
+            La démarche
           </p>
           <h2 className="font-serif text-4xl leading-tight md:text-5xl">
-            Trois heures.<br />
             Deux générations.<br />
             <em className="text-ember">Une mémoire sauvée.</em>
           </h2>
           <img
             src={encounterImg}
-            alt="Accompagnant et homme âgé en conversation autour d'une table de cuisine"
+            alt="Transmetteur et homme âgé en conversation autour d'une table de cuisine"
             width={1024}
             height={1024}
             loading="lazy"
@@ -311,7 +171,7 @@ function Method() {
 
 function Deliverable() {
   const items = [
-    { label: "Un fascicule imprimé", text: "Illustré des photographies qui existent, façonné comme un petit livre à offrir et à transmettre." },
+    { label: "Un fascicule imprimé", text: "Illustré des photographies qui existent, façonné comme un petit livre à offrir et à transmettre. Le texte reprend les formulations de l'aîné, rédigées sur un ton sobre et journalistique." },
     { label: "Une version PDF", text: "À partager librement avec l'ensemble de la famille, où qu'elle se trouve." },
     { label: "Une page web familiale", text: "Un lieu numérique dédié au personnage raconté, qui rejoindra l'arbre généalogique des vôtres." },
   ];
@@ -363,10 +223,11 @@ function Pricing() {
           par personnage raconté
         </p>
         <ul className="mt-8 space-y-3 text-left text-sm leading-relaxed text-ink">
-          <li className="flex gap-3"><span className="text-ember">—</span> Une rencontre de 3 heures, avec un accompagnant</li>
+          <li className="flex gap-3"><span className="text-ember">—</span> Un temps d'échange approfondi avec un transmetteur</li>
           <li className="flex gap-3"><span className="text-ember">—</span> Un fascicule illustré, version papier</li>
           <li className="flex gap-3"><span className="text-ember">—</span> Une version PDF à partager</li>
           <li className="flex gap-3"><span className="text-ember">—</span> Une page web familiale dédiée</li>
+          <li className="flex gap-3"><span className="text-ember">—</span> Déplacement inclus</li>
         </ul>
         <Link
           to="/contact"
@@ -387,7 +248,7 @@ function Transgenerational() {
           Au-delà du récit,<br /><em className="text-ember">un lien.</em>
         </h2>
         <p className="text-lg leading-relaxed text-muted-foreground">
-          Faire raconter un ancien à un accompagnant, c'est plus qu'une collecte : c'est
+          Faire raconter un aîné à un transmetteur, c'est plus qu'une collecte : c'est
           une rencontre. Deux générations qui se parlent, s'écoutent, se reconnaissent.
           Le récit reste, mais le moment partagé compte tout autant.
         </p>
@@ -398,23 +259,75 @@ function Transgenerational() {
 
 function FAQ() {
   const faqs = [
-    { q: "Qui vient à la rencontre de l'aîné ?", a: "Un accompagnant sélectionné par Ondarea, sensibilisé à l'écoute et à la collecte de récits. Le même accompagnant accompagne la rencontre et compose la restitution." },
-    { q: "Que se passe-t-il s'il n'y a pas de photographies ?", a: "Le fascicule reste illustré par les éléments disponibles — documents, lieux, manuscrits — et reste pleinement habité par le récit lui-même." },
-    { q: "Peut-on raconter plusieurs personnages ?", a: "Oui. Chaque personnage donne lieu à une rencontre et à une restitution dédiée, au tarif de 290 € par personnage." },
-    { q: "Où se déroule la rencontre ?", a: "Chez l'aîné, dans le lieu où il se sent le plus à l'aise pour se souvenir et raconter." },
+    {
+      q: "Qu'est-ce qu'Ondarea exactement ?",
+      a: "Ondarea propose d'aller à la rencontre de vos aînés pour interroger leur mémoire et collecter les souvenirs d'une vie. Notre format est orienté exclusivement vers la transmission : lors de chaque rencontre, nous évoquons une ou deux personnes de l'entourage de votre parent — ses propres parents, un oncle, une tante, un grand-parent. Nous avons la conviction qu'on parle mieux de ceux qui nous ont précédés que de soi-même. Et qu'en parlant de ces personnes disparues, on révèle toujours une part de soi.",
+    },
+    {
+      q: "Pourquoi recueillir la mémoire des aînés maintenant ?",
+      a: "Quand une personne disparaît, tout ce qui a constitué sa vie s'efface avec elle — la transmission n'est plus possible. Nous proposons de préserver cette mémoire pour la transmettre aux descendants, tant que cela est encore possible.",
+    },
+    {
+      q: "En quoi est-ce différent d'un album photo ou d'un arbre généalogique ?",
+      a: "Notre démarche est complémentaire de l'album photo. Nous rendons les arbres généalogiques vivants en racontant les vies de ceux qui nous ont précédés. Nous pensons aussi qu'un transmetteur extérieur, avec un regard neutre et bienveillant, est particulièrement bien placé pour collecter cette mémoire — là où un proche pourrait hésiter, ou orienter involontairement le récit.",
+    },
+    {
+      q: "Comment se passe la rencontre avec l'aîné ?",
+      a: "La rencontre a lieu sur le lieu de vie de votre parent, là où il se sent le plus à l'aise pour se souvenir. Confier ses souvenirs et évoquer ses proches n'est pas anodin — cela exige une confiance et une capacité d'écoute réelle. Nous croyons fermement que l'échange entre générations est bénéfique pour celui qui transmet comme pour celui qui reçoit.",
+    },
+    {
+      q: "Qui conduit l'entretien ?",
+      a: "Le plus souvent, nos transmetteurs sont de jeunes étudiants en master, vivant dans la même région que votre parent. La proximité géographique permet de créer une relation naturelle — et de limiter les frais de déplacement, inclus dans le forfait.",
+    },
+    {
+      q: "Que se passe-t-il si l'aîné a du mal à se souvenir ?",
+      a: "Nous ne cherchons pas à mettre l'aîné en difficulté. Il y a toujours des choses qui reviennent — parfois des événements qui paraissent anodins aujourd'hui, mais qui révèlent des parcours de vie très différents des nôtres. Nous guidons votre parent avec des questions ouvertes, puis plus précises au fil de l'entretien, comme le ferait un journaliste. Nous respectons les émotions qui peuvent ressortir, et nous prenons tout le temps nécessaire.",
+    },
+    {
+      q: "Que contient exactement le fascicule ?",
+      a: "Le fascicule contient une retranscription structurée de l'entretien, orientée vers la personne évoquée. Nous reprenons les formulations de l'aîné (en italique) et restituons les étapes de vie sur un ton sobre et journalistique. Nous collectons également tous les documents liés aux personnages évoqués. Le soin apporté à l'écriture et à la mise en page est au cœur de notre travail.",
+    },
+    {
+      q: "Combien de temps après la rencontre le fascicule est-il remis ?",
+      a: "Tous les éléments sont remis dans les quatre semaines suivant la rencontre : le fascicule papier, la transmission intégrale de l'entretien (audio ou vidéo selon votre souhait), et un lien vers une page web privée qui rassemble l'ensemble.",
+    },
+    {
+      q: "Peut-on commander plusieurs récits pour une même famille ?",
+      a: "Bien sûr. Nous pouvons intervenir pour rassembler plusieurs récits, chacun donnant lieu à une rencontre et une restitution dédiée, au tarif de 290 € par personnage.",
+    },
+    {
+      q: "Pourquoi 290 € ?",
+      a: "Ce forfait inclut la rencontre avec votre parent, le travail de restitution, de rédaction, de mise en page et d'édition, ainsi que le déplacement du transmetteur. C'est le prix d'un récit complet, soigné, transmissible.",
+    },
   ];
+
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
     <section className="mx-auto max-w-4xl px-6 py-20 md:py-24">
       <p className="mb-4 text-xs uppercase tracking-[0.25em] text-ember">
         <span className="rule mr-3" />
-        Questions
+        Questions fréquentes
       </p>
       <h2 className="mb-12 font-serif text-4xl md:text-5xl">Pour aller plus loin</h2>
       <dl className="divide-y divide-border">
-        {faqs.map((f) => (
-          <div key={f.q} className="py-6">
-            <dt className="font-serif text-xl text-ink">{f.q}</dt>
-            <dd className="mt-2 leading-relaxed text-muted-foreground">{f.a}</dd>
+        {faqs.map((f, i) => (
+          <div key={f.q}>
+            <button
+              className="flex w-full items-start justify-between gap-6 py-6 text-left"
+              onClick={() => setOpen(open === i ? null : i)}
+              aria-expanded={open === i}
+            >
+              <dt className="font-serif text-xl text-ink">{f.q}</dt>
+              <span className="mt-1 shrink-0 font-serif text-xl text-ember">
+                {open === i ? "−" : "+"}
+              </span>
+            </button>
+            {open === i && (
+              <dd className="pb-6 leading-relaxed text-muted-foreground max-w-2xl">
+                {f.a}
+              </dd>
+            )}
           </div>
         ))}
       </dl>
@@ -447,4 +360,3 @@ function CTA() {
     </section>
   );
 }
-
