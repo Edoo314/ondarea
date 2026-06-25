@@ -25,15 +25,15 @@ function FAQ() {
     },
     {
       q: "En quoi est-ce différent d'un album photo ou d'un arbre généalogique ?",
-      a: "Notre démarche est complémentaire de l'album photo. Nous rendons les arbres généalogiques vivants en racontant les vies de ceux qui nous ont précédés. Nous pensons aussi qu'un transmetteur extérieur, avec un regard neutre et bienveillant, est particulièrement bien placé pour collecter cette mémoire — là où un proche pourrait hésiter, ou orienter involontairement le récit.",
+      a: "Notre démarche est complémentaire de l'album photo. Nous rendons les arbres généalogiques vivants en racontant les vies de ceux qui nous ont précédés. Nous pensons aussi qu'un transmetteur de mémoire extérieur, avec un regard neutre et bienveillant, est particulièrement bien placé pour collecter cette mémoire — là où un proche pourrait hésiter, ou orienter involontairement le récit.",
     },
     {
       q: "Comment se passe la rencontre avec l'aîné ?",
-      a: "La rencontre a lieu sur le lieu de vie de votre parent, là où il se sent le plus à l'aise pour se souvenir. Confier ses souvenirs et évoquer ses proches n'est pas anodin — cela exige une confiance et une capacité d'écoute réelle. Nous croyons fermement que l'échange entre générations est bénéfique pour celui qui transmet comme pour celui qui reçoit.",
+      a: "La rencontre a lieu chez votre parent, là où il sera le plus confortable pour cet échange. Confier ses souvenirs et évoquer ses proches n'est pas anodin — cela exige une confiance et une capacité d'écoute réelle. Nous croyons fermement que l'échange entre générations est bénéfique pour celui qui transmet comme pour celui qui reçoit.",
     },
     {
       q: "Qui conduit l'entretien ?",
-      a: "Le plus souvent, nos transmetteurs sont de jeunes étudiants en master, vivant dans la même région que votre parent. La proximité géographique permet de créer une relation naturelle — et de limiter les frais de déplacements, inclus dans le forfait.",
+      a: "Une personne de notre réseau va jouer le rôle de transmetteur de mémoire. Les déplacements sont inclus dans le forfait. Ce sont nos transmetteurs de mémoire.",
     },
     {
       q: "Que se passe-t-il si l'aîné a du mal à se souvenir ?",
@@ -53,7 +53,7 @@ function FAQ() {
     },
     {
       q: "Pourquoi 290 € ?",
-      a: "Ce forfait inclut la rencontre avec votre parent, le travail de restitution, de rédaction, de mise en page et d'édition, ainsi que les déplacements du transmetteur. C'est le prix d'un récit complet, soigné, transmissible.",
+      a: "Ce forfait inclut la rencontre avec votre parent, le travail de restitution, de rédaction, de mise en page et d'édition, ainsi que les déplacements du transmetteur de mémoire. C'est le prix d'un récit complet, soigné, transmissible.",
     },
   ];
 
@@ -68,7 +68,7 @@ function FAQ() {
           Questions fréquentes
         </p>
         <h1 className="mb-14 font-serif text-5xl leading-tight md:text-6xl">
-          Pour aller<br /><em className="text-ember">plus loin.</em>
+          Pour aller <em className="text-ember">plus loin.</em>
         </h1>
         <dl className="divide-y divide-border">
           {faqs.map((f, i) => (
@@ -79,24 +79,17 @@ function FAQ() {
                 aria-expanded={open === i}
               >
                 <dt className="font-serif text-xl text-ink">{f.q}</dt>
-                <span className="mt-1 shrink-0 font-serif text-xl text-ember">
-                  {open === i ? "−" : "+"}
-                </span>
+                <span className="mt-1 shrink-0 font-serif text-xl text-ember">{open === i ? "−" : "+"}</span>
               </button>
               {open === i && (
-                <dd className="pb-6 leading-relaxed text-muted-foreground max-w-2xl">
-                  {f.a}
-                </dd>
+                <dd className="pb-6 leading-relaxed text-muted-foreground max-w-2xl">{f.a}</dd>
               )}
             </div>
           ))}
         </dl>
         <div className="mt-16 border-t border-border/60 pt-10">
           <p className="text-muted-foreground">Une question non listée ?</p>
-          <Link
-            to="/contact"
-            className="mt-4 inline-block rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90"
-          >
+          <Link to="/contact" className="mt-4 inline-block rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90">
             Nous écrire →
           </Link>
         </div>

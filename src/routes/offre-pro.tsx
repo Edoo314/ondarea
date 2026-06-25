@@ -6,7 +6,7 @@ export const Route = createFileRoute("/offre-pro")({
   head: () => ({
     meta: [
       { title: "Offre Maisons de retraite — Ondarea" },
-      { name: "description", content: "Ondarea propose aux EHPAD et résidences pour personnes âgées des ateliers mémoriels pour leurs résidents. Trois formules : Découverte, Mémoires partagées, Héritage Premium." },
+      { name: "description", content: "Ondarea propose aux EHPAD et résidences pour personnes âgées des ateliers mémoriels pour leurs résidents." },
       { property: "og:title", content: "Ondarea — Une offre dédiée aux maisons de retraite" },
       { property: "og:description", content: "Ateliers mémoriels et livrets familiaux pour les résidents des EHPAD." },
     ],
@@ -21,7 +21,7 @@ type Formula = {
   priceNote?: string;
   residents: string;
   workshops: string;
-  booklet: string;
+  items: string[];
   featured?: boolean;
 };
 
@@ -32,7 +32,12 @@ const formulas: Formula[] = [
     price: "Gratuit",
     residents: "1 résident",
     workshops: "2 ateliers (2 × 1h30)",
-    booklet: "—",
+    items: [
+      "5 exemplaires du fascicule illustré, version papier par biographie",
+      "Une version PDF à partager",
+      "Un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. Les enregistrements de vos parents sont conservés dans cet espace dédié.",
+      "Déplacements inclus",
+    ],
   },
   {
     name: "Mémoires partagées",
@@ -41,7 +46,12 @@ const formulas: Formula[] = [
     priceNote: "forfait",
     residents: "10 résidents",
     workshops: "20 ateliers",
-    booklet: "Un livret papier par résident",
+    items: [
+      "5 exemplaires du fascicule illustré, version papier par biographie",
+      "Une version PDF à partager",
+      "Un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. Les enregistrements de vos parents sont conservés dans cet espace dédié.",
+      "Déplacements inclus",
+          ],
     featured: true,
   },
   {
@@ -51,7 +61,12 @@ const formulas: Formula[] = [
     priceNote: "forfait",
     residents: "20 résidents",
     workshops: "40 ateliers",
-    booklet: "Des livrets papier pour chaque famille",
+    items: [
+      "5 exemplaires du fascicule illustré, version papier par biographie",
+      "Une version PDF à partager",
+      "Un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. Les enregistrements de vos parents sont conservés dans cet espace dédié.",
+      "Déplacements inclus",
+          ],
   },
 ];
 
@@ -59,7 +74,6 @@ function OffrePro() {
   return (
     <div className="min-h-screen bg-paper text-ink">
       <Header />
-
       <main>
         <section className="border-b border-border/60">
           <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
@@ -72,10 +86,10 @@ function OffrePro() {
               <em className="text-ember"> le temps de raconter.</em>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Ondarea propose aux établissements une démarche clé en main :
-              des ateliers mémoriels conduits auprès des résidents, et des
-              livrets remis à leurs familles. Une attention concrète portée
-              à ce qu'ils ont à transmettre.
+              Ondarea propose aux établissements une démarche personnalisée avec leurs résidents :
+              des ateliers mémoriels sont conduits auprès des résidents, et les biographies sont
+              remises directement à leurs familles. Nous pouvons mutualiser les ateliers dans les
+              établissements, réduisant les frais pour chaque famille.
             </p>
           </div>
         </section>
@@ -83,10 +97,7 @@ function OffrePro() {
         <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
           <div className="grid gap-6 md:grid-cols-3">
             {formulas.map((f) => (
-              <article
-                key={f.name}
-                className={`flex flex-col border p-8 ${f.featured ? "border-ink" : "border-ink/15"}`}
-              >
+              <article key={f.name} className={`flex flex-col border p-8 ${f.featured ? "border-ink" : "border-ink/15"}`}>
                 <header>
                   <h2 className="font-serif text-2xl text-ink">{f.name}</h2>
                   <p className="mt-2 text-sm italic text-muted-foreground">{f.tagline}</p>
@@ -94,34 +105,23 @@ function OffrePro() {
                 <div className="mt-6 border-t border-ink/10 pt-6">
                   <p className="font-serif text-5xl text-ink">{f.price}</p>
                   {f.priceNote && (
-                    <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      {f.priceNote}
-                    </p>
+                    <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">{f.priceNote}</p>
                   )}
                 </div>
-                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-ink">
-                  <li className="flex gap-3">
-                    <span className="text-ember">—</span>
-                    <span>{f.residents}</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-ember">—</span>
-                    <span>{f.workshops}</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-ember">—</span>
-                    <span>{f.booklet}</span>
-                  </li>
+                <div className="mt-4 text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                  {f.residents} — {f.workshops}
+                </div>
+                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-ink flex-1">
+                  {f.items.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="text-ember shrink-0">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
-
-
                 <a
                   href={`mailto:bonjour@ondarea.fr?subject=Formule%20${encodeURIComponent(f.name)}`}
-                  className={`mt-8 inline-block w-full rounded-sm px-6 py-3 text-center text-sm font-medium transition-opacity ${
-                    f.featured
-                      ? "bg-ink text-paper hover:opacity-90"
-                      : "border border-ink/30 hover:border-ink"
-                  }`}
+                  className={`mt-8 inline-block w-full rounded-sm px-6 py-3 text-center text-sm font-medium transition-opacity ${f.featured ? "bg-ink text-paper hover:opacity-90" : "border border-ink/30 hover:border-ink"}`}
                 >
                   Demander un devis
                 </a>
@@ -136,8 +136,7 @@ function OffrePro() {
               Vous dirigez une résidence ou un EHPAD ?
             </h2>
             <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed">
-              Nous construisons avec vous un parcours adapté à vos résidents
-              et à leurs familles. Échangeons sur votre établissement.
+              Nous construisons avec vous un parcours adapté à vos résidents et à leurs familles. Échangeons sur votre établissement.
             </p>
             <a
               href="mailto:bonjour@ondarea.fr?subject=Partenariat%20—%20Maison%20de%20retraite"
@@ -148,7 +147,6 @@ function OffrePro() {
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );

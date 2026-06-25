@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as OffreProRouteImport } from './routes/offre-pro'
+import { Route as MethodeTransmetteursRouteImport } from './routes/methode-transmetteurs'
+import { Route as MethodeRouteImport } from './routes/methode'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -20,6 +22,16 @@ import { Route as IndexRouteImport } from './routes/index'
 const OffreProRoute = OffreProRouteImport.update({
   id: '/offre-pro',
   path: '/offre-pro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodeTransmetteursRoute = MethodeTransmetteursRouteImport.update({
+  id: '/methode-transmetteurs',
+  path: '/methode-transmetteurs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodeRoute = MethodeRouteImport.update({
+  id: '/methode',
+  path: '/methode',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
@@ -60,6 +72,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/methode': typeof MethodeRoute
+  '/methode-transmetteurs': typeof MethodeTransmetteursRoute
   '/offre-pro': typeof OffreProRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +83,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/methode': typeof MethodeRoute
+  '/methode-transmetteurs': typeof MethodeTransmetteursRoute
   '/offre-pro': typeof OffreProRoute
 }
 export interface FileRoutesById {
@@ -79,6 +95,8 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/methode': typeof MethodeRoute
+  '/methode-transmetteurs': typeof MethodeTransmetteursRoute
   '/offre-pro': typeof OffreProRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +108,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/mentions-legales'
+    | '/methode'
+    | '/methode-transmetteurs'
     | '/offre-pro'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +119,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/mentions-legales'
+    | '/methode'
+    | '/methode-transmetteurs'
     | '/offre-pro'
   id:
     | '__root__'
@@ -108,6 +130,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/mentions-legales'
+    | '/methode'
+    | '/methode-transmetteurs'
     | '/offre-pro'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +142,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
+  MethodeRoute: typeof MethodeRoute
+  MethodeTransmetteursRoute: typeof MethodeTransmetteursRoute
   OffreProRoute: typeof OffreProRoute
 }
 
@@ -128,6 +154,20 @@ declare module '@tanstack/react-router' {
       path: '/offre-pro'
       fullPath: '/offre-pro'
       preLoaderRoute: typeof OffreProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methode-transmetteurs': {
+      id: '/methode-transmetteurs'
+      path: '/methode-transmetteurs'
+      fullPath: '/methode-transmetteurs'
+      preLoaderRoute: typeof MethodeTransmetteursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methode': {
+      id: '/methode'
+      path: '/methode'
+      fullPath: '/methode'
+      preLoaderRoute: typeof MethodeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mentions-legales': {
@@ -182,6 +222,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
+  MethodeRoute: MethodeRoute,
+  MethodeTransmetteursRoute: MethodeTransmetteursRoute,
   OffreProRoute: OffreProRoute,
 }
 export const routeTree = rootRouteImport

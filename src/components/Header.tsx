@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
 
 function Logo() {
@@ -13,10 +13,7 @@ function Logo() {
         <span style={{ color: "#3C3489" }}>e</span>
         <span style={{ color: "var(--ink)" }}>a</span>
       </span>
-      <span
-        className="font-serif"
-        style={{ color: "var(--muted-foreground)", fontSize: "11px", fontStyle: "italic", letterSpacing: "0.04em", marginTop: "-2px" }}
-      >
+      <span className="font-serif" style={{ color: "var(--muted-foreground)", fontSize: "11px", fontStyle: "italic", letterSpacing: "0.04em", marginTop: "-2px" }}>
         ceux qui nous relient
       </span>
     </Link>
@@ -25,24 +22,32 @@ function Logo() {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { location } = useRouterState();
 
   const navLinks = [
+    { to: "/", label: "Accueil" },
+    { to: "/methode", label: "Notre méthode" },
     { to: "/offre-pro", label: "Offre Pro" },
     { to: "/faq", label: "Questions fréquentes" },
     { to: "/a-propos", label: "À propos" },
   ];
+
+  const isActive = (to: string) => {
+    if (to === "/") return location.pathname === "/";
+    return location.pathname.startsWith(to);
+  };
 
   return (
     <header className="border-b border-border/60 relative z-50">
       <div className="mx-auto flex max-w-6xl items-center gap-10 px-6 py-5">
         <Logo />
 
-        <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+        <nav className="hidden items-center gap-8 text-sm md:flex">
           {navLinks.map((l) => (
             <Link
               key={l.label}
               to={l.to as any}
-              className="hover:text-ink transition-colors"
+              className={`transition-colors ${isActive(l.to) ? "text-ink font-medium" : "text-muted-foreground hover:text-ink"}`}
             >
               {l.label}
             </Link>
@@ -51,10 +56,7 @@ export function Header() {
 
         <div className="flex-1" />
 
-        <Link
-          to="/contact"
-          className="hidden md:inline-block rounded-sm bg-ink px-4 py-2 text-sm font-medium text-paper transition-opacity hover:opacity-90"
-        >
+        <Link to="/contact" className="hidden md:inline-block rounded-sm bg-ink px-4 py-2 text-sm font-medium text-paper transition-opacity hover:opacity-90">
           Nous contacter
         </Link>
 
@@ -75,17 +77,13 @@ export function Header() {
             <Link
               key={l.label}
               to={l.to as any}
-              className="text-sm text-muted-foreground hover:text-ink transition-colors"
+              className={`text-sm transition-colors ${isActive(l.to) ? "text-ink font-medium" : "text-muted-foreground hover:text-ink"}`}
               onClick={() => setOpen(false)}
             >
               {l.label}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className="mt-2 inline-block rounded-sm bg-ink px-4 py-3 text-center text-sm font-medium text-paper transition-opacity hover:opacity-90"
-            onClick={() => setOpen(false)}
-          >
+          <Link to="/contact" className="mt-2 inline-block rounded-sm bg-ink px-4 py-3 text-center text-sm font-medium text-paper transition-opacity hover:opacity-90" onClick={() => setOpen(false)}>
             Nous contacter
           </Link>
         </div>

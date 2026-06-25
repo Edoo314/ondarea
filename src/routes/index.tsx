@@ -48,49 +48,29 @@ function Hero() {
             Préservons<br />
             <span className="relative inline-block">
               ce qui nous <em className="text-ember">lie.</em>
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 320 18"
-                preserveAspectRatio="none"
-                className="absolute -bottom-3 left-0 h-3 w-full"
-              >
-                <path
-                  d="M2 10 C 80 4, 180 4, 260 8 S 310 16, 318 14"
-                  fill="none"
-                  stroke="var(--ink)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
+              <svg aria-hidden="true" viewBox="0 0 320 18" preserveAspectRatio="none" className="absolute -bottom-3 left-0 h-3 w-full">
+                <path d="M2 10 C 80 4, 180 4, 260 8 S 310 16, 318 14" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </span>
           </h1>
           <p className="mt-10 max-w-xl font-serif text-xl italic leading-snug text-ink">
-            Chaque vie recèle une histoire qui mérite d'être entendue.
+            La mémoire de chaque personnalité que nous avons aimée doit être transmise aux nouvelles générations.
           </p>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
             Ondarea recueille auprès des aînés les récits des êtres qu'ils ont aimés —
             un parent, un frère, un grand-parent, un oncle, une tante. Pour que les
-            arbres généalogiques cessent d'être des listes de noms, et redeviennent
-            des mémoires vivantes.
+            arbres généalogiques cessent d'être des listes de noms anonymes statiques,
+            et deviennent des mémoires vivantes incarnées.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              to="/contact"
-              className="rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90"
-            >
+            <Link to="/contact" className="rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90">
               Confier un récit
             </Link>
           </div>
         </div>
         <div className="md:col-span-5">
           <figure className="relative">
-            <img
-              src={heroImg}
-              alt="Mains d'une personne âgée tenant d'anciennes photographies de famille"
-              width={1024}
-              height={1024}
-              className="aspect-[4/5] w-full object-cover shadow-[0_30px_60px_-30px_rgba(60,30,10,0.35)]"
-            />
+            <img src={heroImg} alt="Mains d'une personne âgée tenant d'anciennes photographies de famille" width={1024} height={1024} className="aspect-[4/5] w-full object-cover shadow-[0_30px_60px_-30px_rgba(60,30,10,0.35)]" />
             <figcaption className="absolute -bottom-4 -left-4 max-w-[14rem] bg-paper px-4 py-3 font-serif italic text-sm leading-snug text-ink shadow-sm">
               « Ce que les anciens emportent, personne ne pourra plus le raconter. »
             </figcaption>
@@ -110,13 +90,13 @@ function Method() {
     },
     {
       n: "02",
-      title: "Un transmetteur est désigné.",
-      text: "Nous adressons à l'aîné un transmetteur de notre réseau — le plus souvent un jeune étudiant de la même région. Un temps d'échange approfondi, pour écouter, questionner, tisser un lien entre les générations. La rencontre a lieu chez l'aîné, là où il se sent le plus à l'aise pour se souvenir.",
+      title: "Un « transmetteur de mémoire » est désigné.",
+      text: "Une personne de notre réseau va jouer le rôle de « transmetteur de mémoire ». Un ou plusieurs temps d'échange approfondis sont organisés, pour écouter, questionner, comprendre pour mieux retranscrire. La rencontre a lieu chez votre parent, là où il sera le plus confortable pour cet échange.",
     },
     {
       n: "03",
       title: "La restitution est rédigée et publiée.",
-      text: "Le même transmetteur se charge de la restitution : un fascicule illustré, une version papier, un PDF, et un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. L'ensemble est remis dans les quatre semaines suivant la rencontre.",
+      text: "Sous notre supervision, le transmetteur de mémoire se charge de la restitution. Un fascicule illustré, une version papier, un PDF, et un espace numérique dédié à chaque personnalité vous seront transmis. Ces éléments viendront alimenter un arbre généalogique qui prend vie. L'ensemble est remis dans les quatre semaines suivant la rencontre.",
     },
   ];
 
@@ -132,21 +112,11 @@ function Method() {
             Trois générations.<br />
             <em className="text-ember"> Une mémoire sauvée.</em>
           </h2>
-          <img
-            src={encounterImg}
-            alt="Transmetteur et homme âgé en conversation autour d'une table de cuisine"
-            width={1024}
-            height={1024}
-            loading="lazy"
-            className="mt-10 aspect-square w-full object-cover"
-          />
+          <img src={encounterImg} alt="Transmetteur et homme âgé en conversation autour d'une table de cuisine" width={1024} height={1024} loading="lazy" className="mt-10 aspect-square w-full object-cover" />
         </div>
         <ol className="md:col-span-8 md:pl-12">
           {steps.map((s, i) => (
-            <li
-              key={s.n}
-              className={`grid grid-cols-[auto_1fr] gap-8 py-10 ${i !== steps.length - 1 ? "border-b border-border" : ""}`}
-            >
+            <li key={s.n} className={`grid grid-cols-[auto_1fr] gap-8 py-10 ${i !== steps.length - 1 ? "border-b border-border" : ""}`}>
               <span className="font-serif text-3xl text-ember">{s.n}</span>
               <div>
                 <h3 className="font-serif text-2xl">{s.title}</h3>
@@ -164,21 +134,14 @@ function Deliverable() {
   const items = [
     { label: "Un fascicule imprimé", text: "Illustré des photographies qui existent, façonné comme un petit livre à offrir et à transmettre. Le texte reprend les formulations de l'aîné, rédigées sur un ton sobre et journalistique." },
     { label: "Une version PDF", text: "À partager librement avec l'ensemble de la famille, où qu'elle se trouve." },
-    { label: "Un espace numérique dédié", text: "Un espace dédié aux personnalités transmises, qui alimente un arbre généalogique vivant." },
+    { label: "Un espace numérique dédié", text: "Un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. Les enregistrements de vos parents sont conservés dans cet espace dédié." },
   ];
   return (
     <section className="bg-ink text-paper">
       <div className="mx-auto grid max-w-6xl gap-16 px-6 py-20 md:grid-cols-2 md:py-24 md:items-center">
-        <img
-          src={fasciculeImg}
-          alt="Fascicule de mémoire ouvert montrant typographie et photographie ancienne"
-          width={1024}
-          height={1024}
-          loading="lazy"
-          className="aspect-square w-full object-cover"
-        />
+        <img src={fasciculeImg} alt="Fascicule de mémoire ouvert montrant typographie et photographie ancienne" width={1024} height={1024} loading="lazy" className="aspect-square w-full object-cover" />
         <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.25em] text-ember-soft" style={{ color: "var(--ember-soft)" }}>
+          <p className="mb-4 text-xs uppercase tracking-[0.25em]" style={{ color: "var(--ember-soft)" }}>
             <span className="rule mr-3" style={{ backgroundColor: "var(--ember-soft)" }} />
             La restitution
           </p>
@@ -199,9 +162,7 @@ function Deliverable() {
   );
 }
 
-const offerItems = [
-  "Un temps d'échange approfondi avec un transmetteur",
-  "Un fascicule illustré, version papier",
+const baseItems = [
   "Une version PDF à partager",
   "Un espace numérique dédié aux personnalités transmises",
   "Déplacements inclus",
@@ -214,7 +175,9 @@ function Pricing() {
       label: "1 personnalité",
       badge: null,
       featured: false,
-      extra: [],
+      echange: "Un temps d'échange approfondi avec un transmetteur de mémoire",
+      extra: ["5 exemplaires du fascicule illustré, version papier par biographie"],
+      extraFirst: true,
       cta: "Confier une personnalité",
     },
     {
@@ -222,7 +185,9 @@ function Pricing() {
       label: "2 personnalités",
       badge: "économisez 90 €",
       featured: true,
-      extra: ["2 fascicules, 2 espaces numériques dédiés"],
+      echange: "Des temps d'échange approfondis avec un transmetteur de mémoire",
+      extra: ["5 exemplaires du fascicule illustré, version papier par biographie"],
+      extraFirst: true,
       cta: "Confier deux personnalités",
     },
     {
@@ -230,7 +195,9 @@ function Pricing() {
       label: "5 personnalités",
       badge: "économisez 460 €",
       featured: false,
-      extra: ["5 fascicules, 5 espaces numériques dédiés"],
+      echange: "Des temps d'échange approfondis avec un transmetteur de mémoire",
+      extra: ["5 exemplaires du fascicule illustré, version papier par biographie"],
+      extraFirst: true,
       cta: "Confier cinq personnalités",
     },
   ];
@@ -242,42 +209,24 @@ function Pricing() {
         Tarif
       </p>
       <h2 className="font-serif text-4xl md:text-5xl">Pour chaque personnalité, un récit complet.</h2>
-
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {offers.map((o) => (
-          <div
-            key={o.price}
-            className={`flex flex-col p-8 relative ${o.featured ? "border border-ink bg-cream" : "border border-ink/15 bg-cream"}`}
-          >
+          <div key={o.price} className={`flex flex-col p-8 relative ${o.featured ? "border border-ink bg-cream" : "border border-ink/15 bg-cream"}`}>
             {o.badge && (
-              <span className="absolute top-4 right-4 text-xs uppercase tracking-[0.15em] text-ember">
-                {o.badge}
-              </span>
+              <span className="absolute top-4 right-4 text-xs uppercase tracking-[0.15em] text-ember">{o.badge}</span>
             )}
             <p className="font-serif text-5xl text-ink">{o.price}</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-              {o.label}
-            </p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">{o.label}</p>
             <ul className="mt-8 space-y-3 text-left text-sm leading-relaxed text-ink flex-1">
-              {offerItems.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="text-ember shrink-0">—</span> {item}
-                </li>
-              ))}
+              <li className="flex gap-3"><span className="text-ember shrink-0">—</span> {o.echange}</li>
               {o.extra.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="text-ember shrink-0">—</span> {item}
-                </li>
+                <li key={item} className="flex gap-3"><span className="text-ember shrink-0">—</span> {item}</li>
+              ))}
+              {baseItems.map((item) => (
+                <li key={item} className="flex gap-3"><span className="text-ember shrink-0">—</span> {item}</li>
               ))}
             </ul>
-            <Link
-              to="/contact"
-              className={`mt-10 inline-block w-full rounded-sm px-6 py-3 text-center text-sm font-medium transition-opacity ${
-                o.featured
-                  ? "bg-ink text-paper hover:opacity-90"
-                  : "border border-ink/30 hover:border-ink"
-              }`}
-            >
+            <Link to="/contact" className={`mt-10 inline-block w-full rounded-sm px-6 py-3 text-center text-sm font-medium transition-opacity ${o.featured ? "bg-ink text-paper hover:opacity-90" : "border border-ink/30 hover:border-ink"}`}>
               {o.cta}
             </Link>
           </div>
@@ -299,13 +248,9 @@ function CTA() {
           Quelle est la première personnalité<br />dont vous souhaitez conserver le souvenir ?
         </h2>
         <p className="mt-6 max-w-xl text-paper/70">
-          Écrivez-nous le nom de l'aîné que nous rencontrerons, et celui de la personnalité
-          dont il portera la mémoire. Nous revenons vers vous sous quelques jours.
+          Transmettez-nous le nom de votre parent que vous souhaitez nous confier pour cet exercice de transmission. Nous prendrons contact avec vous pour organiser cette rencontre rapidement. Nous vous recontactons sous 48 heures.
         </p>
-        <Link
-          to="/contact"
-          className="mt-10 inline-block rounded-sm bg-paper px-8 py-4 text-sm font-medium text-ink transition-opacity hover:opacity-90"
-        >
+        <Link to="/contact" className="mt-10 inline-block rounded-sm bg-paper px-8 py-4 text-sm font-medium text-ink transition-opacity hover:opacity-90">
           Confier un récit →
         </Link>
       </div>

@@ -68,7 +68,7 @@ function ContactPage() {
           Confier un récit
         </p>
         <h1 className="font-serif text-4xl leading-tight md:text-5xl">
-          Quel est le premier personnage<br />
+          Quelle est la première personnalité<br />
           <em className="text-ember">dont vous souhaitez conserver le souvenir ?</em>
         </h1>
         <p className="mt-6 max-w-xl text-muted-foreground leading-relaxed">
@@ -168,7 +168,7 @@ function ContactPage() {
                 className="input"
               />
             </Field>
-            <Field label="Personnage dont il portera le récit" error={errors.character} required>
+            <Field label="Personnalité dont il portera le récit (facultatif)" error={errors.character}>
               <input
                 type="text"
                 value={data.character}

@@ -20,6 +20,7 @@ export function Footer() {
 
           <nav className="flex flex-col gap-3">
             <p className="text-xs uppercase tracking-[0.2em] text-ink mb-1">Navigation</p>
+            <Link to="/methode" className="hover:text-ink transition-colors">Notre méthode</Link>
             <Link to="/offre-pro" className="hover:text-ink transition-colors">Offre Pro</Link>
             <Link to="/faq" className="hover:text-ink transition-colors">Questions fréquentes</Link>
             <Link to="/a-propos" className="hover:text-ink transition-colors">À propos</Link>

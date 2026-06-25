@@ -26,8 +26,7 @@ function APropos() {
         </p>
 
         <h1 className="font-serif text-5xl leading-[1.05] tracking-tight md:text-6xl">
-          Edouard<br />
-          <em className="text-ember">de Dreuzy.</em>
+          Edouard de Dreuzy.
         </h1>
 
         <div className="mt-16 grid gap-16 md:grid-cols-[1fr_2fr]">
