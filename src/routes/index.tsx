@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
 import heroImg from "@/assets/hero-hands.jpg";
 import encounterImg from "@/assets/encounter.jpg";
 import fasciculeImg from "@/assets/fascicule.jpg";
@@ -29,8 +28,6 @@ function Home() {
         <Method />
         <Deliverable />
         <Pricing />
-        <Transgenerational />
-        <FAQ />
         <CTA />
       </main>
       <Footer />
@@ -83,12 +80,6 @@ function Hero() {
             >
               Confier un récit
             </Link>
-            <a
-              href="#demarche"
-              className="rounded-sm border border-ink/20 px-6 py-3 text-sm font-medium transition-colors hover:border-ink"
-            >
-              Découvrir la démarche
-            </a>
           </div>
         </div>
         <div className="md:col-span-5">
@@ -114,18 +105,18 @@ function Method() {
   const steps = [
     {
       n: "01",
-      title: "Une rencontre est confiée",
-      text: "Vous nous présentez l'aîné dont vous souhaitez recueillir la mémoire, et le proche dont il portera le récit — un personnage à faire revivre.",
+      title: "Vous nous confiez un parent.",
+      text: "Vous nous mettez en relation avec votre parent dont vous souhaitez recueillir la mémoire. Vous décidez ensemble la personnalité dont il souhaite porter le récit. Il peut s'agir d'une personnalité disparue de votre famille que vous souhaitez mieux faire connaître aux futures générations.",
     },
     {
       n: "02",
-      title: "Un transmetteur est désigné",
+      title: "Un transmetteur est désigné.",
       text: "Nous adressons à l'aîné un transmetteur de notre réseau — le plus souvent un jeune étudiant de la même région. Un temps d'échange approfondi, pour écouter, questionner, tisser un lien entre les générations. La rencontre a lieu chez l'aîné, là où il se sent le plus à l'aise pour se souvenir.",
     },
     {
       n: "03",
-      title: "La restitution est composée",
-      text: "Le même transmetteur se charge de la restitution : un fascicule illustré, une version papier, un PDF, et une page web familiale dédiée au personnage raconté. L'ensemble est remis dans les quatre semaines suivant la rencontre.",
+      title: "La restitution est rédigée et publiée.",
+      text: "Le même transmetteur se charge de la restitution : un fascicule illustré, une version papier, un PDF, et un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. L'ensemble est remis dans les quatre semaines suivant la rencontre.",
     },
   ];
 
@@ -138,8 +129,8 @@ function Method() {
             La démarche
           </p>
           <h2 className="font-serif text-4xl leading-tight md:text-5xl">
-            Deux générations.<br />
-            <em className="text-ember">Une mémoire sauvée.</em>
+            Trois générations.<br />
+            <em className="text-ember"> Une mémoire sauvée.</em>
           </h2>
           <img
             src={encounterImg}
@@ -173,7 +164,7 @@ function Deliverable() {
   const items = [
     { label: "Un fascicule imprimé", text: "Illustré des photographies qui existent, façonné comme un petit livre à offrir et à transmettre. Le texte reprend les formulations de l'aîné, rédigées sur un ton sobre et journalistique." },
     { label: "Une version PDF", text: "À partager librement avec l'ensemble de la famille, où qu'elle se trouve." },
-    { label: "Une page web familiale", text: "Un lieu numérique dédié au personnage raconté, qui rejoindra l'arbre généalogique des vôtres." },
+    { label: "Un espace numérique dédié", text: "Un espace dédié aux personnalités transmises, qui alimente un arbre généalogique vivant." },
   ];
   return (
     <section className="bg-ink text-paper">
@@ -208,129 +199,90 @@ function Deliverable() {
   );
 }
 
+const offerItems = [
+  "Un temps d'échange approfondi avec un transmetteur",
+  "Un fascicule illustré, version papier",
+  "Une version PDF à partager",
+  "Un espace numérique dédié aux personnalités transmises",
+  "Déplacements inclus",
+];
+
 function Pricing() {
+  const offers = [
+    {
+      price: "290 €",
+      label: "1 personnalité",
+      badge: null,
+      featured: false,
+      extra: [],
+      cta: "Confier une personnalité",
+    },
+    {
+      price: "490 €",
+      label: "2 personnalités",
+      badge: "économisez 90 €",
+      featured: true,
+      extra: ["2 fascicules, 2 espaces numériques dédiés"],
+      cta: "Confier deux personnalités",
+    },
+    {
+      price: "990 €",
+      label: "5 personnalités",
+      badge: "économisez 460 €",
+      featured: false,
+      extra: ["5 fascicules, 5 espaces numériques dédiés"],
+      cta: "Confier cinq personnalités",
+    },
+  ];
+
   return (
-    <section id="tarif" className="mx-auto max-w-4xl px-6 py-20 md:py-24">
+    <section id="tarif" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
       <p className="mb-4 text-xs uppercase tracking-[0.25em] text-muted-foreground">
         <span className="rule mr-3" />
         Tarif
       </p>
-      <h2 className="font-serif text-4xl md:text-5xl">Un personnage, un récit complet.</h2>
+      <h2 className="font-serif text-4xl md:text-5xl">Pour chaque personnalité, un récit complet.</h2>
 
-      <div className="mt-12 max-w-md border border-ink/15 bg-cream p-10">
-        <p className="font-serif text-6xl text-ink">290 €</p>
-        <p className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-          par personnage raconté
-        </p>
-        <ul className="mt-8 space-y-3 text-left text-sm leading-relaxed text-ink">
-          <li className="flex gap-3"><span className="text-ember">—</span> Un temps d'échange approfondi avec un transmetteur</li>
-          <li className="flex gap-3"><span className="text-ember">—</span> Un fascicule illustré, version papier</li>
-          <li className="flex gap-3"><span className="text-ember">—</span> Une version PDF à partager</li>
-          <li className="flex gap-3"><span className="text-ember">—</span> Une page web familiale dédiée</li>
-          <li className="flex gap-3"><span className="text-ember">—</span> Déplacement inclus</li>
-        </ul>
-        <Link
-          to="/contact"
-          className="mt-10 inline-block w-full rounded-sm bg-ink px-6 py-3 text-center text-sm font-medium text-paper transition-opacity hover:opacity-90"
-        >
-          Confier un personnage
-        </Link>
-      </div>
-    </section>
-  );
-}
-
-function Transgenerational() {
-  return (
-    <section className="border-y border-border/60 bg-cream">
-      <div className="mx-auto grid max-w-5xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center md:py-24">
-        <h2 className="font-serif text-4xl leading-tight md:text-5xl">
-          Au-delà du récit,<br /><em className="text-ember">un lien.</em>
-        </h2>
-        <p className="text-lg leading-relaxed text-muted-foreground">
-          Faire raconter un aîné à un transmetteur, c'est plus qu'une collecte : c'est
-          une rencontre. Deux générations qui se parlent, s'écoutent, se reconnaissent.
-          Le récit reste, mais le moment partagé compte tout autant.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function FAQ() {
-  const faqs = [
-    {
-      q: "Qu'est-ce qu'Ondarea exactement ?",
-      a: "Ondarea propose d'aller à la rencontre de vos aînés pour interroger leur mémoire et collecter les souvenirs d'une vie. Notre format est orienté exclusivement vers la transmission : lors de chaque rencontre, nous évoquons une ou deux personnes de l'entourage de votre parent — ses propres parents, un oncle, une tante, un grand-parent. Nous avons la conviction qu'on parle mieux de ceux qui nous ont précédés que de soi-même. Et qu'en parlant de ces personnes disparues, on révèle toujours une part de soi.",
-    },
-    {
-      q: "Pourquoi recueillir la mémoire des aînés maintenant ?",
-      a: "Quand une personne disparaît, tout ce qui a constitué sa vie s'efface avec elle — la transmission n'est plus possible. Nous proposons de préserver cette mémoire pour la transmettre aux descendants, tant que cela est encore possible.",
-    },
-    {
-      q: "En quoi est-ce différent d'un album photo ou d'un arbre généalogique ?",
-      a: "Notre démarche est complémentaire de l'album photo. Nous rendons les arbres généalogiques vivants en racontant les vies de ceux qui nous ont précédés. Nous pensons aussi qu'un transmetteur extérieur, avec un regard neutre et bienveillant, est particulièrement bien placé pour collecter cette mémoire — là où un proche pourrait hésiter, ou orienter involontairement le récit.",
-    },
-    {
-      q: "Comment se passe la rencontre avec l'aîné ?",
-      a: "La rencontre a lieu sur le lieu de vie de votre parent, là où il se sent le plus à l'aise pour se souvenir. Confier ses souvenirs et évoquer ses proches n'est pas anodin — cela exige une confiance et une capacité d'écoute réelle. Nous croyons fermement que l'échange entre générations est bénéfique pour celui qui transmet comme pour celui qui reçoit.",
-    },
-    {
-      q: "Qui conduit l'entretien ?",
-      a: "Le plus souvent, nos transmetteurs sont de jeunes étudiants en master, vivant dans la même région que votre parent. La proximité géographique permet de créer une relation naturelle — et de limiter les frais de déplacement, inclus dans le forfait.",
-    },
-    {
-      q: "Que se passe-t-il si l'aîné a du mal à se souvenir ?",
-      a: "Nous ne cherchons pas à mettre l'aîné en difficulté. Il y a toujours des choses qui reviennent — parfois des événements qui paraissent anodins aujourd'hui, mais qui révèlent des parcours de vie très différents des nôtres. Nous guidons votre parent avec des questions ouvertes, puis plus précises au fil de l'entretien, comme le ferait un journaliste. Nous respectons les émotions qui peuvent ressortir, et nous prenons tout le temps nécessaire.",
-    },
-    {
-      q: "Que contient exactement le fascicule ?",
-      a: "Le fascicule contient une retranscription structurée de l'entretien, orientée vers la personne évoquée. Nous reprenons les formulations de l'aîné (en italique) et restituons les étapes de vie sur un ton sobre et journalistique. Nous collectons également tous les documents liés aux personnages évoqués. Le soin apporté à l'écriture et à la mise en page est au cœur de notre travail.",
-    },
-    {
-      q: "Combien de temps après la rencontre le fascicule est-il remis ?",
-      a: "Tous les éléments sont remis dans les quatre semaines suivant la rencontre : le fascicule papier, la transmission intégrale de l'entretien (audio ou vidéo selon votre souhait), et un lien vers une page web privée qui rassemble l'ensemble.",
-    },
-    {
-      q: "Peut-on commander plusieurs récits pour une même famille ?",
-      a: "Bien sûr. Nous pouvons intervenir pour rassembler plusieurs récits, chacun donnant lieu à une rencontre et une restitution dédiée, au tarif de 290 € par personnage.",
-    },
-    {
-      q: "Pourquoi 290 € ?",
-      a: "Ce forfait inclut la rencontre avec votre parent, le travail de restitution, de rédaction, de mise en page et d'édition, ainsi que le déplacement du transmetteur. C'est le prix d'un récit complet, soigné, transmissible.",
-    },
-  ];
-
-  const [open, setOpen] = useState<number | null>(null);
-
-  return (
-    <section className="mx-auto max-w-4xl px-6 py-20 md:py-24">
-      <p className="mb-4 text-xs uppercase tracking-[0.25em] text-ember">
-        <span className="rule mr-3" />
-        Questions fréquentes
-      </p>
-      <h2 className="mb-12 font-serif text-4xl md:text-5xl">Pour aller plus loin</h2>
-      <dl className="divide-y divide-border">
-        {faqs.map((f, i) => (
-          <div key={f.q}>
-            <button
-              className="flex w-full items-start justify-between gap-6 py-6 text-left"
-              onClick={() => setOpen(open === i ? null : i)}
-              aria-expanded={open === i}
-            >
-              <dt className="font-serif text-xl text-ink">{f.q}</dt>
-              <span className="mt-1 shrink-0 font-serif text-xl text-ember">
-                {open === i ? "−" : "+"}
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {offers.map((o) => (
+          <div
+            key={o.price}
+            className={`flex flex-col p-8 relative ${o.featured ? "border border-ink bg-cream" : "border border-ink/15 bg-cream"}`}
+          >
+            {o.badge && (
+              <span className="absolute top-4 right-4 text-xs uppercase tracking-[0.15em] text-ember">
+                {o.badge}
               </span>
-            </button>
-            {open === i && (
-              <dd className="pb-6 leading-relaxed text-muted-foreground max-w-2xl">
-                {f.a}
-              </dd>
             )}
+            <p className="font-serif text-5xl text-ink">{o.price}</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">
+              {o.label}
+            </p>
+            <ul className="mt-8 space-y-3 text-left text-sm leading-relaxed text-ink flex-1">
+              {offerItems.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="text-ember shrink-0">—</span> {item}
+                </li>
+              ))}
+              {o.extra.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="text-ember shrink-0">—</span> {item}
+                </li>
+              ))}
+            </ul>
+            <Link
+              to="/contact"
+              className={`mt-10 inline-block w-full rounded-sm px-6 py-3 text-center text-sm font-medium transition-opacity ${
+                o.featured
+                  ? "bg-ink text-paper hover:opacity-90"
+                  : "border border-ink/30 hover:border-ink"
+              }`}
+            >
+              {o.cta}
+            </Link>
           </div>
         ))}
-      </dl>
+      </div>
     </section>
   );
 }
@@ -344,10 +296,10 @@ function CTA() {
           Commencer
         </p>
         <h2 className="font-serif text-4xl text-paper md:text-5xl">
-          Quel est le premier personnage<br />dont vous souhaitez conserver le souvenir ?
+          Quelle est la première personnalité<br />dont vous souhaitez conserver le souvenir ?
         </h2>
         <p className="mt-6 max-w-xl text-paper/70">
-          Écrivez-nous le nom de l'aîné que nous rencontrerons, et celui du proche
+          Écrivez-nous le nom de l'aîné que nous rencontrerons, et celui de la personnalité
           dont il portera la mémoire. Nous revenons vers vous sous quelques jours.
         </p>
         <Link

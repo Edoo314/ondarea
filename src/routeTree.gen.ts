@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as OffreProRouteImport } from './routes/offre-pro'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as AProposRouteImport } from './routes/a-propos'
@@ -24,6 +25,11 @@ const OffreProRoute = OffreProRouteImport.update({
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   id: '/mentions-legales',
   path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/a-propos': typeof AProposRoute
   '/confirmation': typeof ConfirmationRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/offre-pro': typeof OffreProRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/a-propos': typeof AProposRoute
   '/confirmation': typeof ConfirmationRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/offre-pro': typeof OffreProRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/a-propos': typeof AProposRoute
   '/confirmation': typeof ConfirmationRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/offre-pro': typeof OffreProRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/a-propos'
     | '/confirmation'
     | '/contact'
+    | '/faq'
     | '/mentions-legales'
     | '/offre-pro'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/a-propos'
     | '/confirmation'
     | '/contact'
+    | '/faq'
     | '/mentions-legales'
     | '/offre-pro'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/a-propos'
     | '/confirmation'
     | '/contact'
+    | '/faq'
     | '/mentions-legales'
     | '/offre-pro'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   AProposRoute: typeof AProposRoute
   ConfirmationRoute: typeof ConfirmationRoute
   ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   OffreProRoute: typeof OffreProRoute
 }
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/mentions-legales'
       fullPath: '/mentions-legales'
       preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AProposRoute: AProposRoute,
   ConfirmationRoute: ConfirmationRoute,
   ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   OffreProRoute: OffreProRoute,
 }

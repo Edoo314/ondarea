@@ -48,8 +48,7 @@ function MentionsLegales() {
           <section className="space-y-3">
             <h2 className="font-serif text-2xl text-ink">Hébergement</h2>
             <p>
-              Ce site est hébergé par Lovable (Lovable Technologies AB),
-              Östermalmsgatan 26A, 114 26 Stockholm, Suède.
+              Ce site est hébergé par Vercel Inc., 340 Pine Street Suite 701, San Francisco CA 94104, États-Unis (vercel.com). Le nom de domaine est enregistré auprès d'OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.
             </p>
           </section>
 

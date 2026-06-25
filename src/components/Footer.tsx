@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="space-y-2">
             <span className="font-serif text-xl text-ink">
-              ond<span className="text-ember">area</span>
+              ond<span style={{ color: "#993C1D" }}>a</span>rea
             </span>
             <p className="text-xs uppercase tracking-[0.2em]">mémoires vivantes</p>
             <p className="mt-3">
@@ -20,9 +20,8 @@ export function Footer() {
 
           <nav className="flex flex-col gap-3">
             <p className="text-xs uppercase tracking-[0.2em] text-ink mb-1">Navigation</p>
-            <Link to="/" hash="demarche" className="hover:text-ink transition-colors">La démarche</Link>
-            <Link to="/" hash="tarif" className="hover:text-ink transition-colors">Tarif</Link>
             <Link to="/offre-pro" className="hover:text-ink transition-colors">Offre Pro</Link>
+            <Link to="/faq" className="hover:text-ink transition-colors">Questions fréquentes</Link>
             <Link to="/a-propos" className="hover:text-ink transition-colors">À propos</Link>
             <Link to="/contact" className="hover:text-ink transition-colors">Contact</Link>
           </nav>
