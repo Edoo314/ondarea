@@ -1,0 +1,123 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-cream: var(--cream);
+  --color-ember: var(--ember);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Editorial warm palette — paper, ink, ember */
+  --paper: oklch(0.972 0.012 80);
+  --cream: oklch(0.94 0.018 78);
+  --ink: oklch(0.22 0.015 60);
+  --ember: oklch(0.52 0.13 38);
+  --ember-soft: oklch(0.62 0.10 38);
+
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(0.985 0.008 80);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--cream);
+  --secondary-foreground: var(--ink);
+  --muted: var(--cream);
+  --muted-foreground: oklch(0.45 0.02 60);
+  --accent: var(--ember);
+  --accent-foreground: var(--paper);
+  --destructive: oklch(0.55 0.20 25);
+  --destructive-foreground: var(--paper);
+  --border: oklch(0.86 0.015 75);
+  --input: oklch(0.86 0.015 75);
+  --ring: var(--ember);
+
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  ::selection {
+    background-color: var(--ember);
+    color: var(--paper);
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-serif); }
+  .text-ember { color: var(--ember); }
+  .bg-ember { background-color: var(--ember); }
+  .bg-paper { background-color: var(--paper); }
+  .bg-cream { background-color: var(--cream); }
+  .bg-ink { background-color: var(--ink); }
+  .text-ink { color: var(--ink); }
+  .text-paper { color: var(--paper); }
+  .border-ink { border-color: var(--ink); }
+  .border-ember { border-color: var(--ember); }
+
+  .rule {
+    display: inline-block;
+    width: 2.5rem;
+    height: 1px;
+    background-color: var(--ember);
+    vertical-align: middle;
+  }
+}
