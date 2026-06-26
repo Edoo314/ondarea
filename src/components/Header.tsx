@@ -1,4 +1,4 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 function Logo() {
@@ -22,7 +22,7 @@ function Logo() {
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const { location } = useRouterState();
+  const location = useLocation();
 
   const navLinks = [
     { to: "/", label: "Accueil" },
@@ -46,7 +46,7 @@ export function Header() {
           {navLinks.map((l) => (
             <Link
               key={l.label}
-              to={l.to as any}
+              to={l.to}
               className={`transition-colors ${isActive(l.to) ? "text-ink font-medium" : "text-muted-foreground hover:text-ink"}`}
             >
               {l.label}
@@ -76,7 +76,7 @@ export function Header() {
           {navLinks.map((l) => (
             <Link
               key={l.label}
-              to={l.to as any}
+              to={l.to}
               className={`text-sm transition-colors ${isActive(l.to) ? "text-ink font-medium" : "text-muted-foreground hover:text-ink"}`}
               onClick={() => setOpen(false)}
             >
