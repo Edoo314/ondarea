@@ -13,7 +13,7 @@ function Logo() {
         <span style={{ color: "#3C3489" }}>g</span>
         <span style={{ color: "#993C1D" }}>o</span>
       </span>
-      <span className="font-serif" style={{ color: "var(--muted-foreground)", fontSize: "11px", fontStyle: "italic", letterSpacing: "0.04em", marginTop: "-2px" }}>
+      <span className="font-serif" style={{ color: "var(--muted-foreground)", fontSize: "13px", fontStyle: "italic", letterSpacing: "0.04em", marginTop: "-2px" }}>
         ceux qui nous relient
       </span>
     </Link>
