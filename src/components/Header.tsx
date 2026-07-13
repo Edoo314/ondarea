@@ -3,15 +3,15 @@ import { useState } from "react";
 
 function Logo() {
   return (
-    <Link to="/" aria-label="Ondarea, accueil" className="flex flex-col items-center">
+    <Link to="/" aria-label="Egoligo, accueil" className="flex flex-col items-center">
       <span className="font-serif tracking-tight" style={{ fontStyle: "normal", fontSize: "2.2rem" }}>
-        <span style={{ color: "var(--ink)" }}>o</span>
-        <span style={{ color: "#3C3489" }}>n</span>
-        <span style={{ color: "#0F6E56" }}>d</span>
-        <span style={{ color: "#993C1D", fontStyle: "italic" }}>a</span>
-        <span style={{ color: "#0F6E56" }}>r</span>
-        <span style={{ color: "#3C3489" }}>e</span>
-        <span style={{ color: "var(--ink)" }}>a</span>
+        <span style={{ color: "var(--ink)" }}>e</span>
+        <span style={{ color: "#3C3489" }}>g</span>
+        <span style={{ color: "#993C1D", fontStyle: "italic" }}>o</span>
+        <span style={{ color: "var(--ink)" }}>l</span>
+        <span style={{ color: "#0F6E56" }}>i</span>
+        <span style={{ color: "#3C3489" }}>g</span>
+        <span style={{ color: "#993C1D" }}>o</span>
       </span>
       <span className="font-serif" style={{ color: "var(--muted-foreground)", fontSize: "11px", fontStyle: "italic", letterSpacing: "0.04em", marginTop: "-2px" }}>
         ceux qui nous relient
