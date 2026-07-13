@@ -61,8 +61,8 @@ export default function ContactPage() {
           <em className="text-ember">dont vous souhaitez conserver le souvenir ?</em>
         </h1>
         <p className="mt-6 max-w-xl text-muted-foreground leading-relaxed">
-          Indiquez-nous l'aîné que nous rencontrerons, et le proche dont il
-          portera la mémoire. Nous revenons vers vous sous quelques jours.
+          Transmettez nous les coordonnées du parent que nous rencontrerons, avec vos coordonnées. 
+          Nous prendrons contact avec vous dans un délai de 48 heures.
         </p>
 
         <form onSubmit={onSubmit} noValidate className="mt-14 space-y-8">
