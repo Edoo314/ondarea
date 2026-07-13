@@ -8,7 +8,7 @@ export default function FAQ() {
   const faqs = [
     {
       q: "Qu'est-ce qu' Egoligo exactement ?",
-      a: " Egoligo propose d'aller à la rencontre de vos aînés pour interroger leur mémoire et collecter les souvenirs d'une vie. Notre format est orienté exclusivement vers la transmission : lors de chaque rencontre, nous évoquons une ou deux personnalités de l'entourage de votre parent — ses propres parents, un oncle, une tante, un grand-parent. Nous avons la conviction qu'on parle mieux de ceux qui nous ont précédés que de soi-même. Et qu'en parlant de ces personnalités disparues, on révèle toujours une part de soi.",
+      a: " Egoligo propose d'aller à la rencontre de vos aînés pour interroger leur mémoire et collecter les souvenirs d'une vie. Notre format est orienté exclusivement vers la transmission : lors de chaque rencontre, nous évoquons une ou deux personnalités de l'entourage de votre parent — ses propres parents, un oncle, une tante, un grand-parent. Nous avons la conviction qu'on parle mieux de ceux qui nous ont précédés que de soi-même. Et qu'en parlant de ces personnalités disparues, on révèle toujours une part de soi.\n\nEgoligo signifie "je lie" ou "je relie" en latin. Notre ambition est de relier les générations grâce au fil de la parole et du témoignage.",
     },
     {
       q: "Pourquoi recueillir la mémoire des aînés maintenant ?",
