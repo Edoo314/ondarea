@@ -40,7 +40,7 @@ export default function ContactPage() {
     }
     setErrors({});
     try {
-      sessionStorage.setItem(" Egoligo-contact", JSON.stringify(parsed.data));
+      sessionStorage.setItem("Egoligo-contact", JSON.stringify(parsed.data));
     } catch {
       // sessionStorage can be unavailable; proceed anyway
     }
@@ -127,28 +127,7 @@ export default function ContactPage() {
           </Field>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <Field label="Ville" error={errors.city}>
-              <input
-                type="text"
-                value={data.city}
-                onChange={(e) => update("city", e.target.value)}
-                maxLength={120}
-                className="input"
-              />
-            </Field>
-            <Field label="Département" error={errors.department}>
-              <input
-                type="text"
-                value={data.department}
-                onChange={(e) => update("department", e.target.value)}
-                maxLength={120}
-                className="input"
-              />
-            </Field>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <Field label="Nom de l'aîné à rencontrer" error={errors.elder} required>
+            <Field label="Nom de votre parent à rencontrer" error={errors.elder} required>
               <input
                 type="text"
                 value={data.elder}
@@ -162,6 +141,27 @@ export default function ContactPage() {
                 type="text"
                 value={data.character}
                 onChange={(e) => update("character", e.target.value)}
+                maxLength={120}
+                className="input"
+              />
+            </Field>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <Field label="Sa ville" error={errors.city}>
+              <input
+                type="text"
+                value={data.city}
+                onChange={(e) => update("city", e.target.value)}
+                maxLength={120}
+                className="input"
+              />
+            </Field>
+            <Field label="Son département" error={errors.department}>
+              <input
+                type="text"
+                value={data.department}
+                onChange={(e) => update("department", e.target.value)}
                 maxLength={120}
                 className="input"
               />
