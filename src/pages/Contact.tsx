@@ -127,7 +127,7 @@ export default function ContactPage() {
           </Field>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <Field label="Ville (facultatif)" error={errors.city}>
+            <Field label="Ville" error={errors.city}>
               <input
                 type="text"
                 value={data.city}
@@ -136,7 +136,7 @@ export default function ContactPage() {
                 className="input"
               />
             </Field>
-            <Field label="Département (facultatif)" error={errors.department}>
+            <Field label="Département" error={errors.department}>
               <input
                 type="text"
                 value={data.department}
