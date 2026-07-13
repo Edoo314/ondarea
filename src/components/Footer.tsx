@@ -11,8 +11,8 @@ export function Footer() {
             </span>
             <p className="text-xs uppercase tracking-[0.2em]">mémoires vivantes</p>
             <p className="mt-3">
-              <a href="mailto:bonjour@egoligo.fr" className="hover:text-ink transition-colors">
-                bonjour@egoligo.fr
+              <a href="mailto:bonjour@ Egoligo.fr" className="hover:text-ink transition-colors">
+                bonjour@ Egoligo.fr
               </a>
             </p>
             <p>1 rue Gentil Ader — 64100 Bayonne</p>
@@ -34,7 +34,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-border/60 pt-6">
-          <p>© {new Date().getFullYear()} egoligo — Un patrimoine immatériel unique.</p>
+          <p>© {new Date().getFullYear()}  Egoligo — Un patrimoine immatériel unique.</p>
         </div>
       </div>
     </footer>

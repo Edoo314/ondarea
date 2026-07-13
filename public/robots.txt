@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /methode-transmetteurs
 
-Sitemap: https://egoligo.fr/sitemap.xml
+Sitemap: https:// Egoligo.fr/sitemap.xml

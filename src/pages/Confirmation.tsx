@@ -11,7 +11,7 @@ export default function ConfirmationPage() {
 
   useEffect(() => {
     try {
-      const raw = sessionStorage.getItem("egoligo-contact");
+      const raw = sessionStorage.getItem(" Egoligo-contact");
       if (!raw) {
         window.location.href = "/contact";
         return;
@@ -26,13 +26,13 @@ export default function ConfirmationPage() {
 
   const mailtoSubject = `Confier un récit — ${data.name}`;
   const mailtoBody = buildMailtoBody(data);
-  const mailtoHref = `mailto:bonjour@egoligo.fr?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
+  const mailtoHref = `mailto:bonjour@ Egoligo.fr?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
 
   function sendMail() {
     window.location.href = mailtoHref;
     setSent(true);
     try {
-      sessionStorage.removeItem("egoligo-contact");
+      sessionStorage.removeItem(" Egoligo-contact");
     } catch {
       // ignore
     }
@@ -52,7 +52,7 @@ export default function ConfirmationPage() {
         </h1>
         <p className="mt-6 max-w-xl text-muted-foreground leading-relaxed">
           Vérifiez les informations ci-dessous. Cliquez sur le bouton pour les
-          envoyer à egoligo. Votre client e-mail s'ouvrira avec le message
+          envoyer à  Egoligo. Votre client e-mail s'ouvrira avec le message
           pré-rempli.
         </p>
 
@@ -101,7 +101,7 @@ export default function ConfirmationPage() {
           {sent ? (
             <div className="rounded-sm border border-ink/15 bg-paper px-6 py-4 text-sm text-muted-foreground">
               Votre client e-mail s'est ouvert. Si ce n'est pas le cas, écrivez-nous directement à{" "}
-              <a href="mailto:bonjour@egoligo.fr" className="text-ink underline">bonjour@egoligo.fr</a>.
+              <a href="mailto:bonjour@ Egoligo.fr" className="text-ink underline">bonjour@ Egoligo.fr</a>.
             </div>
           ) : (
             <>
@@ -109,7 +109,7 @@ export default function ConfirmationPage() {
                 onClick={sendMail}
                 className="rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-opacity hover:opacity-90"
               >
-                Envoyer la demande à egoligo
+                Envoyer la demande à  Egoligo
               </button>
               <Link
                 to="/contact"

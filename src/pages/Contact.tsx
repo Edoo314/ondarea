@@ -40,7 +40,7 @@ export default function ContactPage() {
     }
     setErrors({});
     try {
-      sessionStorage.setItem("egoligo-contact", JSON.stringify(parsed.data));
+      sessionStorage.setItem(" Egoligo-contact", JSON.stringify(parsed.data));
     } catch {
       // sessionStorage can be unavailable; proceed anyway
     }

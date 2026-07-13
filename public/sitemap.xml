@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://egoligo.fr/</loc>
+    <loc>https:// Egoligo.fr/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://egoligo.fr/methode</loc>
+    <loc>https:// Egoligo.fr/methode</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://egoligo.fr/offre-pro</loc>
+    <loc>https:// Egoligo.fr/offre-pro</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egoligo.fr/faq</loc>
+    <loc>https:// Egoligo.fr/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://egoligo.fr/a-propos</loc>
+    <loc>https:// Egoligo.fr/a-propos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://egoligo.fr/contact</loc>
+    <loc>https:// Egoligo.fr/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://egoligo.fr/mentions-legales</loc>
+    <loc>https:// Egoligo.fr/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

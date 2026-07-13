@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function Logo() {
   return (
-    <Link to="/" aria-label="Egoligo, accueil" className="flex flex-col items-center">
+    <Link to="/" aria-label=" Egoligo, accueil" className="flex flex-col items-center">
       <span className="font-serif tracking-tight" style={{ fontStyle: "normal", fontSize: "2.2rem" }}>
         <span style={{ color: "var(--ink)" }}>e</span>
         <span style={{ color: "#3C3489" }}>g</span>
