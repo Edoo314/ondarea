@@ -7,8 +7,10 @@ import { Footer } from "../components/Footer";
 export default function FAQ() {
   const faqs = [
     {
-      q: "Qu'est-ce qu' Egoligo exactement ?",
+      q: "Qu'est-ce qu'Egoligo exactement ?",
       a: "Egoligo propose d'aller à la rencontre de vos aînés pour interroger leur mémoire et collecter les souvenirs d'une vie. Notre format est orienté exclusivement vers la transmission : lors de chaque rencontre, nous évoquons une ou deux personnalités de l'entourage de votre parent — ses propres parents, un oncle, une tante, un grand-parent. Nous avons la conviction qu'on parle mieux de ceux qui nous ont précédés que de soi-même. Et qu'en parlant de ces personnalités disparues, on révèle toujours une part de soi. Egoligo signifie « je lie » ou « je relie » en latin. Notre ambition est de relier les générations grâce au fil de la parole et du témoignage.",
+    },
+    {
       q: "Pourquoi recueillir la mémoire des aînés maintenant ?",
       a: "Quand une personne disparaît, tout ce qui a constitué sa vie s'efface avec elle — la transmission n'est plus possible. Nous proposons de préserver cette mémoire pour la transmettre aux descendants, tant que cela est encore possible.",
     },
@@ -38,10 +40,10 @@ export default function FAQ() {
     },
     {
       q: "Peut-on commander plusieurs récits pour une même famille ?",
-      a: "Bien sûr. Nous proposons des forfaits pour 2 personnalités (490 €) ou 5 personnalités (990 €), chacun donnant lieu à une rencontre et une restitution dédiée.",
+      a: "Bien sûr. Nous proposons des forfaits pour 2 personnalités (680 €) ou 5 personnalités (1 590 €), chacun donnant lieu à une rencontre et une restitution dédiée.",
     },
     {
-      q: "Pourquoi 290 € ?",
+      q: "Pourquoi 390 € ?",
       a: "Ce forfait inclut la rencontre avec votre parent, le travail de restitution, de rédaction, de mise en page et d'édition, ainsi que les déplacements du transmetteur de mémoire. C'est le prix d'un récit complet, soigné, transmissible.",
     },
   ];
