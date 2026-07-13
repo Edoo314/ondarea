@@ -21,7 +21,6 @@ const formulas: Formula[] = [
     residents: "1 résident",
     workshops: "2 ateliers (2 × 1h30)",
     items: [
-      ,
       "Une version PDF à partager",
       "Un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. Les enregistrements de vos parents sont conservés dans cet espace dédié.",
       "Déplacements inclus",
@@ -39,7 +38,7 @@ const formulas: Formula[] = [
       "Une version PDF à partager",
       "Un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. Les enregistrements de vos parents sont conservés dans cet espace dédié.",
       "Déplacements inclus",
-          ],
+    ],
     featured: true,
   },
   {
@@ -54,7 +53,7 @@ const formulas: Formula[] = [
       "Une version PDF à partager",
       "Un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. Les enregistrements de vos parents sont conservés dans cet espace dédié.",
       "Déplacements inclus",
-          ],
+    ],
   },
 ];
 
@@ -74,7 +73,7 @@ export default function OffrePro() {
               <em className="text-ember"> le temps de raconter.</em>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-               Egoligo propose aux établissements une démarche personnalisée avec leurs résidents :
+              Egoligo propose aux établissements une démarche personnalisée avec leurs résidents :
               des ateliers mémoriels sont conduits auprès des résidents, et les biographies sont
               remises directement à leurs familles. Nous pouvons mutualiser les ateliers dans les
               établissements, réduisant les frais pour chaque famille.
@@ -108,7 +107,7 @@ export default function OffrePro() {
                   ))}
                 </ul>
                 <a
-                  href={`mailto:bonjour@ Egoligo.fr?subject=Formule%20${encodeURIComponent(f.name)}`}
+                  href={`mailto:bonjour@egoligo.fr?subject=Formule%20${encodeURIComponent(f.name)}`}
                   className={`mt-8 inline-block w-full rounded-sm px-6 py-3 text-center text-sm font-medium transition-opacity ${f.featured ? "bg-ink text-paper hover:opacity-90" : "border border-ink/30 hover:border-ink"}`}
                 >
                   Demander un devis
@@ -127,10 +126,10 @@ export default function OffrePro() {
               Nous construisons avec vous un parcours adapté à vos résidents et à leurs familles. Échangeons sur votre établissement.
             </p>
             <a
-              href="mailto:bonjour@ Egoligo.fr?subject=Partenariat%20—%20Maison%20de%20retraite"
+              href="mailto:bonjour@egoligo.fr?subject=Partenariat%20—%20Maison%20de%20retraite"
               className="mt-10 inline-block rounded-sm bg-ink px-8 py-4 text-sm font-medium text-paper transition-opacity hover:opacity-90"
             >
-              bonjour@ Egoligo.fr
+              bonjour@egoligo.fr
             </a>
           </div>
         </section>
