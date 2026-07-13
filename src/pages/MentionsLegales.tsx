@@ -21,7 +21,7 @@ export default function MentionsLegales() {
           <section className="space-y-3">
             <h2 className="font-serif text-2xl text-ink">Éditeur du site</h2>
             <p>
-              <strong className="text-ink font-medium">Ondarea</strong><br />
+              <strong className="text-ink font-medium">egoligo</strong><br />
               1 rue Gentil Ader<br />
               64100 Bayonne<br />
               France
@@ -31,7 +31,7 @@ export default function MentionsLegales() {
             </p>
             <p>
               Directeur de la publication : Edouard de Dreuzy<br />
-              Contact : <a href="mailto:bonjour@ondarea.fr" className="text-ink underline-offset-4 hover:underline">bonjour@ondarea.fr</a>
+              Contact : <a href="mailto:bonjour@egoligo.fr" className="text-ink underline-offset-4 hover:underline">bonjour@egoligo.fr</a>
             </p>
           </section>
 
@@ -46,7 +46,7 @@ export default function MentionsLegales() {
             <h2 className="font-serif text-2xl text-ink">Propriété intellectuelle</h2>
             <p>
               L'ensemble du contenu de ce site (textes, images, conception) est
-              la propriété exclusive d'Ondarea. Toute reproduction, même
+              la propriété exclusive d'egoligo. Toute reproduction, même
               partielle, est interdite sans autorisation préalable écrite.
             </p>
           </section>
@@ -63,8 +63,8 @@ export default function MentionsLegales() {
               modifiée et au Règlement Général sur la Protection des Données
               (RGPD), vous disposez d'un droit d'accès, de rectification et de
               suppression de vos données. Pour l'exercer, écrivez à{" "}
-              <a href="mailto:bonjour@ondarea.fr" className="text-ink underline-offset-4 hover:underline">
-                bonjour@ondarea.fr
+              <a href="mailto:bonjour@egoligo.fr" className="text-ink underline-offset-4 hover:underline">
+                bonjour@egoligo.fr
               </a>.
             </p>
           </section>

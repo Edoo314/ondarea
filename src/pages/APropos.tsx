@@ -22,7 +22,7 @@ export default function APropos() {
           {/* Placeholder photo */}
           <div className="aspect-[3/4] w-full bg-cream border border-ink/10 flex items-end p-6">
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Fondateur, Ondarea
+              Fondateur, egoligo
             </p>
           </div>
 
@@ -34,13 +34,13 @@ export default function APropos() {
 
             <div className="space-y-5 leading-relaxed text-muted-foreground">
               <p>
-                Entrepreneur passionné par l'Histoire, j'ai fondé Ondarea avec
+                Entrepreneur passionné par l'Histoire, j'ai fondé egoligo avec
                 une conviction simple : les récits que portent nos aînés sur
                 ceux qu'ils ont aimés sont un patrimoine irremplaçable — et
                 ils disparaissent avec eux.
               </p>
               <p>
-                Ondarea est né de ce constat. Aller collecter ces mémoires,
+                egoligo est né de ce constat. Aller collecter ces mémoires,
                 les mettre en forme avec soin, les transmettre aux générations
                 suivantes — c'est ce que nous faisons, rencontre après
                 rencontre.
@@ -58,10 +58,10 @@ export default function APropos() {
                 Contact
               </p>
               <a
-                href="mailto:bonjour@ondarea.fr"
+                href="mailto:bonjour@egoligo.fr"
                 className="text-ink underline-offset-4 hover:underline"
               >
-                bonjour@ondarea.fr
+                bonjour@egoligo.fr
               </a>
             </div>
 

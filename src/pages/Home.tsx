@@ -44,7 +44,7 @@ function Hero() {
             La mémoire de chaque personnalité que nous avons aimée doit être transmise aux nouvelles générations.
           </p>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-            Ondarea recueille auprès des aînés les récits des êtres qu'ils ont aimés —
+            egoligo recueille auprès des aînés les récits des êtres qu'ils ont aimés —
             un parent, un frère, un grand-parent, un oncle, une tante. Pour que les
             arbres généalogiques cessent d'être des listes de noms anonymes statiques,
             et deviennent des mémoires vivantes incarnées.

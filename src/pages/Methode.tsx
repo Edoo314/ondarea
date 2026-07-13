@@ -23,7 +23,7 @@ export default function Methode() {
     {
       n: "04",
       title: "Une relecture et une validation",
-      text: "Avant remise, chaque fascicule est relu et validé par l'équipe Ondarea. La famille peut signaler des corrections ou des compléments. Le livrable final — fascicule papier, PDF et espace numérique — est remis dans les quatre semaines suivant la rencontre. L'enregistrement audio sera également disponible sur la plateforme, dans votre espace privé.",
+      text: "Avant remise, chaque fascicule est relu et validé par l'équipe egoligo. La famille peut signaler des corrections ou des compléments. Le livrable final — fascicule papier, PDF et espace numérique — est remis dans les quatre semaines suivant la rencontre. L'enregistrement audio sera également disponible sur la plateforme, dans votre espace privé.",
     },
   ];
 

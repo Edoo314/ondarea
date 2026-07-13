@@ -57,7 +57,7 @@ export default function MethotdeTransmetteurs() {
         "Respecter la chronologie quand elle aide à comprendre. La briser quand une anecdote éclaire mieux placée ailleurs.",
         "Ne pas chercher à être exhaustif. Mieux vaut un récit de 8 pages dense et vivant qu'un inventaire de 20 pages.",
         "Soigner les transitions entre les parties. Le lecteur doit sentir qu'il progresse dans une vie, pas qu'il consulte une fiche.",
-        "Faire relire par un tiers avant de livrer à l'équipe Ondarea.",
+        "Faire relire par un tiers avant de livrer à l'équipe egoligo.",
       ],
     },
     {
@@ -65,8 +65,8 @@ export default function MethotdeTransmetteurs() {
       items: [
         "Enregistrement audio : application Dictaphone (iPhone) ou Voice Recorder (Android). Qualité suffisante, simple d'usage.",
         "Transcription automatique : Whisper (via whisper.ai ou une interface locale) — le plus précis en français. Alternative : Otter.ai ou la transcription intégrée à Google Docs.",
-        "Rédaction : Google Docs ou Word, avec le suivi des modifications activé pour faciliter la relecture Ondarea.",
-        "Mise en page du fascicule : gabarit fourni par Ondarea (à venir).",
+        "Rédaction : Google Docs ou Word, avec le suivi des modifications activé pour faciliter la relecture egoligo.",
+        "Mise en page du fascicule : gabarit fourni par egoligo (à venir).",
         "Prise de notes pendant l'entretien : carnet papier recommandé — moins distrayant qu'un écran pour l'aîné.",
       ],
     },
@@ -86,7 +86,7 @@ export default function MethotdeTransmetteurs() {
           <em className="text-ember">de mémoire.</em>
         </h1>
         <p className="text-muted-foreground leading-relaxed max-w-2xl mb-16">
-          Ce guide est destiné aux transmetteurs de mémoire du réseau Ondarea. Il détaille la méthode, les thèmes à couvrir, les outils à utiliser et les exigences de qualité attendues pour chaque mission.
+          Ce guide est destiné aux transmetteurs de mémoire du réseau egoligo. Il détaille la méthode, les thèmes à couvrir, les outils à utiliser et les exigences de qualité attendues pour chaque mission.
         </p>
 
         <div className="space-y-16">
@@ -110,7 +110,7 @@ export default function MethotdeTransmetteurs() {
 
         <div className="mt-20 border-t border-border/60 pt-10">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            Document interne Ondarea — non destiné à la publication.
+            Document interne egoligo — non destiné à la publication.
           </p>
         </div>
       </main>
