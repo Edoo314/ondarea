@@ -158,7 +158,7 @@ const baseItems = [
 function Pricing() {
   const offers = [
     {
-      price: "290 €",
+      price: "390 €",
       label: "1 personnalité",
       badge: null,
       featured: false,
@@ -168,9 +168,9 @@ function Pricing() {
       cta: "Confier une personnalité",
     },
     {
-      price: "490 €",
+      price: "680 €",
       label: "2 personnalités",
-      badge: "économisez 90 €",
+      badge: "économisez 100 €",
       featured: true,
       echange: "Des temps d'échange approfondis avec un transmetteur de mémoire",
       extra: ["5 exemplaires du fascicule illustré, version papier par biographie"],
@@ -178,9 +178,9 @@ function Pricing() {
       cta: "Confier deux personnalités",
     },
     {
-      price: "990 €",
+      price: "1590 €",
       label: "5 personnalités",
-      badge: "économisez 460 €",
+      badge: "économisez 360 €",
       featured: false,
       echange: "Des temps d'échange approfondis avec un transmetteur de mémoire",
       extra: ["5 exemplaires du fascicule illustré, version papier par biographie"],

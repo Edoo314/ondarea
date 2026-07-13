@@ -21,7 +21,7 @@ const formulas: Formula[] = [
     residents: "1 résident",
     workshops: "2 ateliers (2 × 1h30)",
     items: [
-      "5 exemplaires du fascicule illustré, version papier par biographie",
+      ,
       "Une version PDF à partager",
       "Un espace numérique dédié aux personnalités transmises, qui alimente un arbre généalogique vivant. Les enregistrements de vos parents sont conservés dans cet espace dédié.",
       "Déplacements inclus",
@@ -30,7 +30,7 @@ const formulas: Formula[] = [
   {
     name: "Mémoires partagées",
     tagline: "Pour ouvrir la démarche à une première résidence.",
-    price: "2 900 €",
+    price: "3 900 €",
     priceNote: "forfait",
     residents: "10 résidents",
     workshops: "20 ateliers",
@@ -45,7 +45,7 @@ const formulas: Formula[] = [
   {
     name: "Héritage Premium",
     tagline: "Un partenariat durable, pensé pour s'inscrire dans le temps.",
-    price: "4 900 €",
+    price: "6 900 €",
     priceNote: "forfait",
     residents: "20 résidents",
     workshops: "40 ateliers",
